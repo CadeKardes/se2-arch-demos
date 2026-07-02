@@ -11,7 +11,7 @@
 #  If a route function does more than ~5 lines,
 #  something is leaking from the wrong layer.
 # =============================================================
-
+import os
 from flask import Flask, request, redirect, url_for, render_template_string
 from services import TaskService
 
@@ -205,4 +205,4 @@ if __name__ == "__main__":
     print("    repository.py — all data storage")
     print("    models.py     — Task class + TaskFactory")
     print("    strategies_and_observers.py — patterns\n")
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=False)
