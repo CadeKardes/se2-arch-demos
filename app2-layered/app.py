@@ -153,7 +153,7 @@ TEMPLATE = """
 #
 #  Compare each of these to the equivalent function in app1.
 
-@app.route("/")
+@app.route("/") 
 def index():
     filter_by = request.args.get("filter", "all")
     sort_by   = request.args.get("sort",   "priority")
